@@ -1,12 +1,12 @@
 <header class="header">
   <nav class="nav">
     <ul class="header_menu">
-      <li class="nav-link">〇〇さん</li>
-      <li class="header_menu_title"><%= link_to "trelloo", root_path, class: "nav-link" %></li>
+      <li class="nav-link">ユーザー名：<%= current_user.name %></li>
+      <li class="header_menu_title"><%= link_to "Trelloo", root_path, class: "nav-link" %></li>
       <li>
         <ul class="header_menu_inner">
           <li><%= link_to "リストを作成", "#", class: "n¥av-link listNew" %></li>
-          <li><%= link_to "サインアウト", "#", class: "nav-link" %></li>
+          <li><%= link_to "サインアウト", destroy_user_session_path, class: "nav-link", method: :delete %></li>
         </ul>
       </li>
     </ul>
