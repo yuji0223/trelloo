@@ -13,6 +13,10 @@ class CardController < ApplicationController
     end
   end
 
+  def show
+    @card = Card.find(params[:id])
+  end
+
   private
   def card_params
     params.require(:card).permit(:title, :memo, :list_id)
