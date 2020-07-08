@@ -1,6 +1,6 @@
 class CardController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-  
+
   def new
     @card = Card.new
     @list = List.find_by(id: params[:list_id])
@@ -19,6 +19,7 @@ class CardController < ApplicationController
   end
 
   def edit
+    @lists = List.where(user: current_user)
   end
 
   def update
