@@ -1,7 +1,7 @@
 .topPage {
   min-height: 93vh;
   padding-top: 30px;
-  background: #d1e0e9;
+  background: #bdbebe;
   overflow-x: scroll;
   .listWrapper {
     display: flex;
@@ -9,7 +9,7 @@
     align-items: baseline;
     .list {
       position: relative;
-      background: #f5f6f7;
+      background: #e2e4e6;
       padding: 10px;
       margin-left: 20px;
       min-width: 250px;
@@ -30,7 +30,7 @@
             font-size: 18px;
             color: #8c8c8c;
           }
-          .fa-trash {
+          .fa-pen {
             margin-right: 10px;
           }
         }

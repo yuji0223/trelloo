@@ -3,11 +3,12 @@ class CardController < ApplicationController
 
   def new
     @card = Card.new
-    @list = List.find_by(id: params[:list_id])
+    @list = List.find(params[:list_id])
   end
 
   def create
     @card = Card.new(card_params)
+    @list = List.find(params[:list_id])
     if @card.save
       redirect_to :root
     else
@@ -23,6 +24,7 @@ class CardController < ApplicationController
   end
 
   def update
+    @lists = List.where(user: current_user)
     if @card.update_attributes(card_params)
       redirect_to :root
     else

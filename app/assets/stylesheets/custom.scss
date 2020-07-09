@@ -9,7 +9,7 @@ body {
 
 // header
 .header {
-  background: #026aa7;
+  background: teal;
   padding: 10px;
   .nav {
     .header_menu {
@@ -25,6 +25,10 @@ body {
         color: #fff;
         a {
           color: #fff;
+          &:hover {
+            color: gray;
+            text-decoration: none;
+          }
         }
       }
       &_title {
