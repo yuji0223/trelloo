@@ -18,5 +18,12 @@
         <%= f.submit "サインイン", class: "loginBtn" %>
       </div>
     <% end %>
+    <%= form_with scope: resource, as: resource_name, url: session_path(resource_name), html: { class: "mt-5, new_user" }, local: true do |f| %>
+      <%= f.hidden_field :email, autofocus: true, class: "form-control", autocomplete: "email", value: "testuser@testuser.com" %>
+      <%= f.hidden_field :password, class: "form-control", autocomplete: "off", value: "test"  %>
+    <div class="form-group text-center">
+      <%= f.submit "テストユーザーログイン", class: "loginBtn" %>
+    </div>
+  <% end %>
   </div>
 </div>
