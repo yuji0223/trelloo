@@ -2,15 +2,15 @@
   <div class="container">
     <div class="cardContents">
       <div class="cardContents_title">
-        <div>タイトル</div>
+        <div>タイトル</div><br>
         <h2><%= @card.title %></h2>
       </div>
       <div class="cardContents_memo">
-        <div>メモ</div>
+        <div>メモ</div><br>
         <div><%= safe_join(@card.memo.split("\n"),tag(:br)) %></div>
       </div>
       <div class="cardContents_listStatus">
-        <div>リスト名</div>
+        <div>リスト名</div><br>
         <div><%= @card.list.title %></div>
       </div>
       <div class="cardContents_btnArea">
