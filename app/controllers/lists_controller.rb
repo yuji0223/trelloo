@@ -1,4 +1,4 @@
-class ListController < ApplicationController
+class ListsController < ApplicationController
   before_action :set_list, only: [:edit, :update, :destroy]
   def new
     @list = List.new
