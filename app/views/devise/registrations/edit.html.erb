@@ -4,9 +4,15 @@
       <% if @user.errors.any? %>
         <p class="text-danger">名前を入力してください</p>
       <% end %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control listName", placeholder: "名前" %>
-      <div class="text-center"><%= f.submit "名前を変更する", class: "submitBtn" %></div>
+      <% if @user.email == "testuser@testuser.com" %>
+        <p><i class="fas fa-exclamation-triangle"></i> テストユーザーでログインしているため編集できません</p>
+      <% else %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control listName", placeholder: "名前" %>
+        <div class="text-center">
+        <%= f.submit "名前を変更する", class: "submitBtn" %>
+        </div>
+      <% end %>  
     <% end %>
   </div>
 </div>
