@@ -6,7 +6,7 @@ $(function () {
   },
   function() {
     $(this).animate({
-      'font-size': '16px'}, 200);
+      'font-size': '18px'}, 200);
     $(this).css('color', '');
   });
 });

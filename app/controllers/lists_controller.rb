@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:edit, :update, :destroy]
+  
   def new
     @list = List.new
   end
@@ -14,6 +15,11 @@ class ListsController < ApplicationController
   end
 
   def edit
+    if @list.user == current_user
+      render action: :edit
+    else
+      redirect_to :root
+    end
   end
 
   def update
