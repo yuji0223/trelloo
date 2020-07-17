@@ -40,13 +40,14 @@ class CardsController < ApplicationController
 
   def sort
     card = Card.find(params[:card_id])
+    # list = List.find(params[:list_id])
     card.update(card_params)
     render body: nil
   end
 
   private
   def card_params
-    params.require(:card).permit(:title, :memo, :list_id, :row_order_position)
+    params.require(:card).permit(:title, :memo, :list_id, :row_order_position).merge(user: current_user)
   end
 
   def set_card
