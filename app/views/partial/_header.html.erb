@@ -2,7 +2,8 @@
   <nav class="nav">
     <ul class="header_menu  flex-column flex-sm-row">
       <li class="nav-link">ユーザー名：<%= link_to current_user.name, edit_user_registration_path %></li>
-      <li class="header_menu_title"><%= link_to "Trelloo", root_path, class: "nav-link" %></li>
+      <li class="header_menu_title_1"><%= link_to "Trelloo", root_path, class: "nav-link" %></li>
+      <li class="header_menu_title_2"><%= link_to "Wantt", wants_path, class: "nav-link" %></li>
       <li>
         <ul class="header_menu_inner">
           <li><%= link_to "リスト作成", new_list_path, class: "nav-link listNew" %></li>

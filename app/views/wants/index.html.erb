@@ -1,0 +1,15 @@
+<div class="topPage">
+  <div class="listWrapper">
+    <% @wants.each do |want| %>
+      <div class="list">
+        <div class="list_header">
+          <h2 class="list_header_title"><%= want.title %></h2>
+          <div class="list_header_action">
+            <%= link_to content_tag(:i, '', class: 'fas fa-pen listIcon'), edit_want_path(want) %>
+            <%= link_to content_tag(:i, '', class: 'fas fa-trash listIcon'), want, method: :delete, data: { confirm: "#{want.title}リストを削除して大丈夫ですか？" } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

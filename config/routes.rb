@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       put :sort
     end
   end
+
+  resources :wants, only: [:index, :new, :create, :edit, :update, :destroy]
 end
