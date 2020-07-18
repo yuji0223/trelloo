@@ -3,11 +3,11 @@
     <div class="cardContents">
       <div class="cardContents_title">
         <div>タイトル</div><br>
-        <h2><%= @card.title %></h2>
+        <h2><%= auto_link(simple_format(h(@card.title),html: {target:'_blank'})) %></h2>
       </div>
       <div class="cardContents_memo">
         <div>メモ</div><br>
-        <div><%= safe_join(@card.memo.split("\n"),tag(:br)) %></div>
+        <div><%= auto_link(simple_format(h(@card.memo),html: {target:'_blank'})) %></div>
       </div>
       <div class="cardContents_listStatus">
         <div>リスト名</div><br>

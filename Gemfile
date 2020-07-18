@@ -68,3 +68,4 @@ gem 'jquery-ui-rails'
 gem 'ranked-model'
 gem 'pry-rails'
 gem 'pg', group: :production
+gem 'rails_autolink'
