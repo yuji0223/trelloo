@@ -10,9 +10,9 @@
           </div>
         </div>
         <div class="cardWrapper">
-          <div class="cardList">
+          <div class="cardList list_padding">
             <% list.cards.rank(:row_order).each do |card| %>
-              <%= content_tag "div", id: "card-#{card.id}", data: { model_name: card.class.name.underscore, update_url: list_card_sort_path(card.list, card)} do %>  
+              <%= content_tag "div", data: { model_name: card.class.name.underscore, update_url: list_card_sort_path(card.list, card)} do %>  
                 <div class="card">
                   <%= link_to list_card_path(list, card), class:"cardDetail_link" do %>
                     <h3 class="card_title"><%= card.title %></h3>
@@ -25,7 +25,7 @@
             <% end %>
           </div>
           <div class="addCard">
-            <i class="far fa-plus-square"></i>
+            <i class="fas fa-plus"></i>
             <%= link_to "カードを追加", new_list_card_path(list), class: "addCard_link" %>
           </div>
         </div>

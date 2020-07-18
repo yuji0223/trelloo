@@ -15,9 +15,7 @@ class ListsController < ApplicationController
   end
 
   def edit
-    if @list.user == current_user
-      render action: :edit
-    else
+    if @list.user != current_user
       redirect_to :root
     end
   end

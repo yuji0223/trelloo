@@ -66,4 +66,5 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'jquery-ui-rails'
 gem 'ranked-model'
+gem 'pry-rails'
 gem 'pg', group: :production
