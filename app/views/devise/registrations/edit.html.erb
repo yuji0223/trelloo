@@ -12,6 +12,7 @@
         <div class="text-center">
         <%= f.submit "名前を変更する", class: "submitBtn" %>
         </div>
+        <%= link_to 'ユーザーを削除する', user_registration_path, data: { confirm: "Are you sure?" }, class: "text-danger delete_btn", method: :delete %>
       <% end %>  
     <% end %>
   </div>
