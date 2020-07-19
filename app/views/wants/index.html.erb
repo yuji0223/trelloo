@@ -1,7 +1,8 @@
+<div class="explanation">ここは全員で共有するページです。内容に気をつけて、やりたいことを宣言してみましょう！</div>
 <div class="topPage">
   <div class="listWrapper">
     <% @wants.each do |want| %>
-      <div class="list">
+      <div class="list want">
         <div class="list_header">
           <h2 class="list_header_title"><%= want.title %></h2>
             <% if want.user_id == current_user.id %>
