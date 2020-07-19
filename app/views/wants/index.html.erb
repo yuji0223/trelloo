@@ -1,0 +1,40 @@
+<div class="explanation">ここは全員で共有するページです。内容に気をつけて、やりたいことを宣言してみましょう！</div>
+<div class="topPage">
+  <div class="listWrapper">
+    <% @wants.each do |want| %>
+      <div class="list want">
+        <div class="list_header">
+          <h2 class="list_header_title"><%= want.title %></h2>
+            <% if want.user_id == current_user.id %>
+            <div class="list_header_action">
+              <%= link_to content_tag(:i, '', class: 'fas fa-pen listIcon'), edit_want_path(want) %>
+              <%= link_to content_tag(:i, '', class: 'fas fa-trash listIcon'), want, method: :delete, data: { confirm: "#{want.title}リストを削除して大丈夫ですか？" } %>
+            </div>
+            <% end %>
+        </div>
+        <div class="cardWrapper">
+          <div class="cardList">
+            <% want.details.rank(:row_order).each do |detail| %>
+              <%= content_tag "div", data: { model_name: detail.class.name.underscore, update_url: want_detail_sort_path(detail.want, detail)} do %>  
+                <div class="card">
+                  <%= link_to want_detail_path(want, detail), class:"cardDetail_link" do %>
+                    <h3 class="card_title"><%= detail.title %></h3>
+                    <% if detail.memo.size > 0 %>
+                      <div class="card_detail is-exist"><i class="fas fa-bars"></i></div>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <% if want.user_id == current_user.id %>
+          <div class="addCard">
+            <i class="fas fa-plus"></i>
+            <%= link_to "カードを追加", new_want_detail_path(want), class: "addCard_link" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

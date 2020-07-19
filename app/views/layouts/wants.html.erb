@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trelloo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="header">
+    <nav class="nav">
+      <ul class="header_menu  flex-column flex-sm-row">
+        <li class="nav-link">ユーザー：<%= link_to current_user.name, edit_user_registration_path %></li>
+        <li class="header_menu_title_1"><%= link_to "Trelloo", root_path, class: "nav-link" %></li>
+        <li class="header_menu_title_2"><%= link_to "Wantt", wants_path, class: "nav-link" %></li>
+        <li>
+          <ul class="header_menu_inner">
+            <li><%= link_to "共有リスト作成", new_want_path, class: "nav-link listNew" %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

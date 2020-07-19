@@ -31,14 +31,25 @@ body {
           }
         }
       }
-      &_title {
+      &_title_1 {
         position: absolute;
-        left: 50%;
+        left: 40%;
         top: 50%;
         transform: translate(-50%, -50%);
         font-size: 25px;
         font-weight: bold;
+        margin-right: 5px;
       }
+      &_title_2 {
+        position: absolute;
+        left: 55%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 25px;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
       &_inner {
         display: flex;
         padding: 0;
