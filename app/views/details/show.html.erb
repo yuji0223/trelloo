@@ -1,0 +1,24 @@
+<div class='carddetailPage'>
+  <div class="container">
+    <div class="cardContents">
+      <div class="cardContents_title">
+        <div>タイトル</div><br>
+        <h2><%= auto_link(simple_format(h(@detail.title),html: {target:'_blank'})) %></h2>
+      </div>
+      <div class="cardContents_memo">
+        <div>詳細</div><br>
+        <div><%= auto_link(simple_format(h(@detail.memo),html: {target:'_blank'})) %></div>
+      </div>
+      <div class="cardContents_listStatus">
+        <div>リスト名</div><br>
+        <div><%= @detail.want.title %></div>
+      </div>
+      <% if @detail.user_id == current_user.id %>
+      <div class="cardContents_btnArea">
+        <%= link_to '編集する', edit_want_detail_path(@detail.want, @detail), class: "edit_btn" %>
+        <%= link_to '削除する', want_detail_path(@detail.want, @detail), class: "text-danger delete_btn", method: :delete %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

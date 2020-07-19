@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :wants, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :wants, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :details, except: :index do
+      put :sort
+    end
+  end
 end
