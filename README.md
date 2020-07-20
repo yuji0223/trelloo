@@ -1,24 +1,32 @@
-# README
+Trelloo & Wantt
+https://trelloo-app.herokuapp.com/
+==
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##概要
+Trelloライクなカンバン型タスク管理ツール + ユーザー全員の「いつかやりたいこと」を共有できるアプリケーションです
 
-Things you may want to cover:
+##制作背景
+・タスク管理にスマホのメモアプリや手帳、時にはPCに付箋を貼って管理する事があり、それらを一つのツールでまとめたいと思い開発しました。
+・スマホに「いつかやりたいこと」を、昔から思いついた時にメモしていました。友人も同じように管理している事を知り、色々な人のやりたい事を一覧で見ることができたら面白いなと思いました。
 
-* Ruby version
+##機能
+・新規登録・ログイン・ログアウト
+・テストユーザーログイン
+・「リスト」作成・編集・削除
+・「カード」作成・編集・削除
+・カードのリスト間移動
+・ドラッグ&ドロップによるカードの並び替え
+・やりたいことの共有
 
-* System dependencies
+##今後実装したい機能
+・グループでのタスク管理機能
+・ドラッグ&ドロップによるカードのリスト間移動
+・カレンダー
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##使用技術
+・Ruby
+・Ruby on Rails
+・jQuery
+・bootstrap
+・PostgreSQL
+・Heroku
