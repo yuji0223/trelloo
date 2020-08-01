@@ -8,6 +8,8 @@
       <div class="cardContents_memo">
         <div>詳細</div><br>
         <div><%= auto_link(simple_format(h(@detail.memo),html: {target:'_blank'})) %></div>
+          <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="315" src="https://www.youtube.com/embed/<%= @detail.youtube_url.last(11) %>" width="560"></iframe>
+
       </div>
       <div class="cardContents_listStatus">
         <div>リスト名</div><br>

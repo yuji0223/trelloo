@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_141944) do
     t.integer "want_id", null: false
     t.integer "user_id", null: false
     t.integer "row_order"
+    t.string "youtube_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_details_on_user_id"

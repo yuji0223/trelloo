@@ -11,7 +11,10 @@
       </div>
       <div class="cardnewForm_memo">
         <%= f.label '詳細' %>
-        <%= f.text_area :memo, autofocus: true, class: "form-control memo", placeholder: "詳細を書いてみよう" %>
+        <%= f.text_area :memo, class: "form-control memo", placeholder: "詳細を書いてみよう" %>
+      <div class="cardnewForm_memo">
+        <%= f.label 'youtubeのURL' %>
+        <%= f.text_field :youtube_url, class: "form-control", placeholder: "youtubeのurl" %>
       <div class="text-center"><%= f.submit "作成する", class: "submitBtn" %></div>
       </div>
     <% end %>

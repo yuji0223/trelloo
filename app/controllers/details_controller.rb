@@ -5,6 +5,7 @@ class DetailsController < ApplicationController
   def new
     @detail = Detail.new
     @want = Want.find(params[:want_id])
+    
   end
 
   def create
@@ -47,11 +48,11 @@ class DetailsController < ApplicationController
 
   private
   def detail_params
-    params.require(:detail).permit(:title, :memo, :want_id, :row_order_position).merge(user: current_user)
+    params.require(:detail).permit(:title, :memo, :want_id, :row_order_position, :youtube_url).merge(user: current_user)
   end
 
   def sort_params
-    params.require(:detail).permit(:title, :memo, :want_id, :row_order_position)
+    params.require(:detail).permit(:row_order_position)
   end
 
   def set_detail
