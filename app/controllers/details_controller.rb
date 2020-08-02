@@ -1,18 +1,16 @@
 class DetailsController < ApplicationController
   before_action :set_detail, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:edit, :update, :destroy]
-
+  before_action :set_want, only: [:new, :create, :update]
+  
   def new
     @detail = Detail.new
-    @want = Want.find(params[:want_id])
-    
   end
 
   def create
     @detail = Detail.new(detail_params)
-    @want = Want.find(params[:want_id])
     if @detail.save
-      redirect_to wants_path
+      redirect_to want_detail_path(@want, @detail)
     else
       render action: :new
     end
@@ -25,9 +23,8 @@ class DetailsController < ApplicationController
   end
 
   def update
-
     if @detail.update_attributes(detail_params)
-      redirect_to wants_path
+      redirect_to want_detail_path(@want, @detail)
     else
       render action: :edit
     end
@@ -61,6 +58,10 @@ class DetailsController < ApplicationController
     if @detail.user != current_user
       redirect_to wants_path
     end
+  end
+
+  def set_want
+    @want = Want.find(params[:want_id])
   end
 
 end
