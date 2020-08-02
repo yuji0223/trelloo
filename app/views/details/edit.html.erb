@@ -11,6 +11,9 @@
       <div class="cardeditForm_memo">
         <%= f.label '詳細' %>
         <%= f.text_area :memo, class: "form-control memo", placeholder: "詳細を書いてみよう" %>
+      <div class="cardnewForm_memo">
+        <%= f.label 'youtubeのURL' %>
+        <%= f.text_field :youtube_url, class: "form-control", placeholder: "youtubeのurl" %>
       </div>
       <div class="text-center"><%= f.submit "更新する", class: "submitBtn" %></div>
     <% end %>
