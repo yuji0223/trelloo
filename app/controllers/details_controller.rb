@@ -22,11 +22,9 @@ class DetailsController < ApplicationController
   end
 
   def edit
-    @wants = Want.where(user: current_user)
   end
 
   def update
-    @wants = Want.where(user: current_user)
 
     if @detail.update_attributes(detail_params)
       redirect_to wants_path

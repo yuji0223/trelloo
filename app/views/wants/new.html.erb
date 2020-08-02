@@ -5,7 +5,7 @@
         <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
       <% end %>
       <%= f.label :title %>
-      <%= f.text_field :title, autofocus: true, class: "form-control listName", value: "#{current_user.name} ’s dream" %>
+      <%= f.text_field :title, autofocus: true, class: "form-control listName", value: "#{current_user.name}のリスト" %>
       <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
     <% end %>
   </div>
