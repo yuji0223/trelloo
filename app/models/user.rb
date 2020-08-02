@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :lists, dependent: :destroy
   has_many :wants, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }
 end
