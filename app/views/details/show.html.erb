@@ -13,8 +13,13 @@
         <% end %>
       </div>
       <div class="cardContents_listStatus">
-        <div>リスト名</div><br>
-        <div><%= @detail.want.title %></div>
+      <% if Like.find_by(user_id: current_user.id, detail_id: @detail.id) %>
+        <%= link_to "いいねを取り消す", want_detail_like_path(@want, @detail), method: :delete %>
+        <%= @detail.likes.length %>
+      <% else %>
+        <%= link_to "いいね！", want_detail_likes_path(@want, @detail), method: :post %>
+        <%= @detail.likes.length %>
+      <% end %>
       </div>
       <% if @detail.user_id == current_user.id %>
       <div class="cardContents_btnArea">
