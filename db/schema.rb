@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_02_065146) do
+ActiveRecord::Schema.define(version: 2020_08_09_051911) do
 
   create_table "cards", force: :cascade do |t|
     t.string "title", limit: 255, null: false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2020_08_02_065146) do
     t.integer "user_id", null: false
     t.index ["list_id"], name: "index_cards_on_list_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "detail_id", null: false
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["detail_id"], name: "index_comments_on_detail_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "details", force: :cascade do |t|
