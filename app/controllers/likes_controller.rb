@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
-  before_action :set_detail
-  before_action :set_want, only: [:create, :destroy]
+  before_action :set_detail, :set_want
 
   def create
     @like = Like.create(user_id: current_user.id, detail_id: @detail.id)

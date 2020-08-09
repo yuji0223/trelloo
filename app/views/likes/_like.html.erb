@@ -1,0 +1,14 @@
+<%# if Like.find_by(user_id: current_user.id, detail_id: @detail.id) %>
+<% if current_user.likes.find_by(detail_id: @detail.id) %>
+  <div id="liked">
+    <%= link_to want_detail_like_path(@want, @detail), method: :delete, remote: true do %>
+      <%= image_tag "icon_stared.png", size:'25x25' %>
+      いいね！<%= @detail.likes.length %>
+    <% end %>
+<% else %>
+  <div id="like">
+    <%= link_to want_detail_likes_path(@want, @detail), method: :post, remote: true do %>
+      <%= image_tag "icon_star.png", size:'25x25' %>
+      いいね！<%= @detail.likes.length %>
+    <% end %>
+<% end %>
