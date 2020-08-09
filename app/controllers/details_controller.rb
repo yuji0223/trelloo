@@ -1,7 +1,7 @@
 class DetailsController < ApplicationController
   before_action :set_detail, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:edit, :update, :destroy]
-  before_action :set_want, only: [:new, :create, :update]
+  before_action :set_want, only: [:new, :create, :show, :update]
   
   def new
     @detail = Detail.new
@@ -17,6 +17,7 @@ class DetailsController < ApplicationController
   end
 
   def show
+    @like = Like.new
   end
 
   def edit

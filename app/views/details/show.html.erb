@@ -13,8 +13,7 @@
         <% end %>
       </div>
       <div class="cardContents_listStatus">
-        <div>リスト名</div><br>
-        <div><%= @detail.want.title %></div>
+        <%= render partial: "likes/like", locals: {detail: @detail} %>
       </div>
       <% if @detail.user_id == current_user.id %>
       <div class="cardContents_btnArea">
