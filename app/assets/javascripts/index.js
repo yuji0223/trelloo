@@ -1,4 +1,4 @@
-$(function () {
+$(document).on("turbolinks:load", function() {
   $('.listIcon, .addCard_link').hover(function() {
     $(this).animate({
       'font-size': '20px'}, 200);
