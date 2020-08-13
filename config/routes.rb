@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :wants, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :details, except: :index do
       resources :likes, only: [:create, :destroy]
+      resources :comments, only: :create
       put :sort
     end
   end

@@ -18,6 +18,8 @@ class DetailsController < ApplicationController
 
   def show
     @like = Like.new
+    @comment = Comment.new
+    @comments = @detail.comments.includes(:user)
   end
 
   def edit
