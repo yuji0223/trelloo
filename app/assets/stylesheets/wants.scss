@@ -3,8 +3,18 @@
   color: #fff;
   font-size: 17px;
   text-align: center;
- }
+}
 
- .want {
-   background: rgb(223, 230, 136) !important;
- }
+.want {
+  background: rgb(223, 230, 136) !important;
+}
+
+.cardDetail_link {
+  position: relative;
+}
+
+.likeCount {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}

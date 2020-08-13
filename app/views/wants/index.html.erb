@@ -19,6 +19,10 @@
                 <div class="card">
                   <%= link_to want_detail_path(want, detail), class:"cardDetail_link" do %>
                     <h3 class="card_title"><%= detail.title %></h3>
+                    <div class="likeCount">
+                      <%= image_tag "icon_stared.png", size:'15x15' %>
+                      <%= detail.likes.length %>
+                    </div>
                     <% if detail.memo.present? || detail.youtube_url.present?  %>
                       <div class="card_detail is-exist"><i class="fas fa-bars"></i></div>
                     <% end %>
